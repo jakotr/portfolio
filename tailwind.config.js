@@ -18,7 +18,10 @@ module.exports = {
 
     },
     container: {
-      padding: '1rem'
+      padding: {
+        DEFAULT: '1rem',
+        md:'3rem'
+      }
     },
   },
   plugins: [],
