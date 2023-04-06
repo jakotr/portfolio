@@ -1,8 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { motion } from "framer-motion";
 
-import { header, about } from "../constants";
+import { LangContext } from "../context/LangContext";
+import { fadeIn, textVariant, staggerContainer, zoomIn } from "../utils/motion";
 
 const Introduction = () => {
+  //context
+  const { dictionary } = useContext(LangContext);
+
   //refs
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
@@ -48,17 +53,30 @@ const Introduction = () => {
   return (
     <section className="w-full min-h-screen bg-bgDark text-stone-50">
       <div className="container max-w-7xl mx-auto">
-        <header className="w-fit flex flex-col pt-[200px] mx-auto">
+        <motion.header
+          className="w-fit flex flex-col pt-[200px] mx-auto"
+          variants={textVariant(0.1, 1)}
+          initial="hidden"
+          whileInView="show"
+        >
           <h1 className="xl:text-8xl sm:text-6xl text-4xl font-bold">
-            {header.name}
+            {dictionary.intro.name}
           </h1>
-          <h2 className="xl:text-4xl sm:text-3xl text-xl">{header.position}</h2>
+          <h2 className="xl:text-4xl sm:text-3xl text-xl">
+            {dictionary.intro.position}
+          </h2>
           <span className="text-center text-grayText sm:text-sm text-xs block pt-[150px] pb-4 animate-pulse">
             Scroll down...
           </span>
-        </header>
+        </motion.header>
         <div className="pt-[200px] relative">
-          <span className="lg:w-[2px] w-[1px] h-[200px] bg-stone-50 block mx-auto absolute top-0 left-1/2 -translate-x-1/2"></span>
+          <motion.span
+            className="lg:w-[2px] w-[1px] lg:-ml-[1px] ml-0 h-[200px] bg-stone-50 block absolute top-0 left-1/2"
+            variants={zoomIn(0.1, 1)}
+            initial="hidden" 
+            whileInView='show'
+            viewport={{once: true}}
+          ></motion.span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 2200"
@@ -99,9 +117,15 @@ const Introduction = () => {
               ></g>
             </g>
           </svg>
-          <div className="absolute left-0 top-1/3 md:max-w-2xl max-w-xs bg-bgDark py-4 md:text-2xl text-md">
-            {about}
-          </div>
+          <motion.p
+            className="absolute left-0 top-1/3 md:max-w-2xl max-w-xs bg-bgDark py-4 md:text-2xl text-md"
+            variants={fadeIn("left", "", 0.1, 2)}
+            initial="hidden" 
+            whileInView='show'
+            viewport={{once: true}}
+          >
+            {dictionary.about}
+          </motion.p>
         </div>
       </div>
     </section>
