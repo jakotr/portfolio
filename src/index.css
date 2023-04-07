@@ -16,6 +16,10 @@
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #fefefe;
+}
+
 a {
   transition: .2s ease;
 }
