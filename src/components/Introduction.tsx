@@ -1,21 +1,29 @@
 import { useEffect, useRef, useContext } from "react";
 import { motion } from "framer-motion";
 
+//context
 import { LangContext } from "../context/LangContext";
-import { fadeIn, textVariant, staggerContainer, zoomIn } from "../utils/motion";
+//utils
+import { fadeIn, textVariant, zoomIn } from "../utils/motion";
+//styles
+import { styles } from "../styles";
 
 const Introduction = () => {
   //context
-  const { dictionary } = useContext(LangContext);
+  const {
+    dictionary: { intro, about },
+  } = useContext(LangContext);
 
   //refs
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
 
   //effects
   useEffect(() => {
     const svgNode = svgRef.current;
     const pathNode = pathRef.current;
+    const containerNode = containerRef.current;
     let length = 0;
 
     if (pathNode instanceof SVGPathElement) {
@@ -29,18 +37,17 @@ const Introduction = () => {
 
     const handleScroll = () => {
       //calculate scrollpercent
-      const scrollpercent =
-        (document.body.scrollTop + document.documentElement.scrollTop) /
-        (document.documentElement.scrollHeight -
-          document.documentElement.clientHeight);
-      const draw = length * scrollpercent;
+      if (containerNode !== null) {
+        const scrollpercent =
+          (document.body.scrollTop + document.documentElement.scrollTop) /
+          // (document.documentElement.scrollHeight -
+          (containerNode.scrollHeight - document.documentElement.clientHeight);
+        const draw = length * scrollpercent;
+      }
 
       if (svgNode !== null) {
         // give to the svg the offset value to start drawing that on scroll
-        svgNode.style.strokeDashoffset = (
-          length -
-          (draw + draw * 0.1 + document.documentElement.scrollTop * 0.1)
-        ).toString();
+        svgNode.style.strokeDashoffset = (length - draw).toString();
       }
     };
 
@@ -51,8 +58,11 @@ const Introduction = () => {
   }, []);
 
   return (
-    <section className="w-full min-h-screen bg-bgDark text-stone-50">
-      <div className="container max-w-7xl mx-auto">
+    <section
+      ref={containerRef}
+      className="w-full min-h-screen bg-darkColor text-lightColor"
+    >
+      <div className={`${styles.container}`}>
         <motion.header
           className="w-fit flex flex-col pt-[200px] mx-auto"
           variants={textVariant(0.1, 1)}
@@ -60,22 +70,20 @@ const Introduction = () => {
           whileInView="show"
         >
           <h1 className="xl:text-8xl sm:text-6xl text-4xl font-bold">
-            {dictionary.intro.name}
+            {intro.name}
           </h1>
-          <h2 className="xl:text-4xl sm:text-3xl text-xl">
-            {dictionary.intro.position}
-          </h2>
+          <h2 className="xl:text-4xl sm:text-3xl text-xl">{intro.position}</h2>
           <span className="text-center text-grayText sm:text-sm text-xs block pt-[150px] pb-4 animate-pulse">
             Scroll down...
           </span>
         </motion.header>
         <div className="pt-[200px] relative">
           <motion.span
-            className="lg:w-[2px] w-[1px] lg:-ml-[1px] ml-0 h-[200px] bg-stone-50 block absolute top-0 left-1/2"
+            className="lg:w-[2px] w-[1px] lg:-ml-[1px] ml-0 h-[200px] bg-lightColor block absolute top-0 left-1/2"
             variants={zoomIn(0.1, 1)}
-            initial="hidden" 
-            whileInView='show'
-            viewport={{once: true}}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
           ></motion.span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -118,13 +126,13 @@ const Introduction = () => {
             </g>
           </svg>
           <motion.p
-            className="absolute left-0 top-1/3 md:max-w-2xl max-w-xs bg-bgDark py-4 md:text-2xl text-md"
+            className="absolute left-0 top-1/3 md:max-w-2xl max-w-xs bg-darkColor py-4 md:text-2xl text-sm "
             variants={fadeIn("left", "", 0.1, 2)}
-            initial="hidden" 
-            whileInView='show'
-            viewport={{once: true}}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
           >
-            {dictionary.about}
+            {about}
           </motion.p>
         </div>
       </div>

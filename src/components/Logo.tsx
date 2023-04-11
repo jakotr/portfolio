@@ -1,19 +1,14 @@
-import React from "react";
-
+//TS pe for props
 type logoProps = {
-  width: number | string,
-  height: number | string,
-  hexColor: string
-}
+  width: number | string;
+  height: number | string;
+  hexColor: string;
+};
 
-const Logo = ({width, height, hexColor} : logoProps) => {
+const Logo = ({ width, height, hexColor }: logoProps) => {
   return (
     <>
-      <svg
-        width={width}
-        height={height}
-        viewBox="0 0 196.875 196.875"
-      >
+      <svg width={width} height={height} viewBox="0 0 196.875 196.875">
         <defs id="SvgjsDefs1780"></defs>
         <g
           id="SvgjsG1781"

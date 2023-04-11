@@ -1,4 +1,6 @@
+//components
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Introduction from "./components/Introduction";
 import ProgressBar from "./components/ProgressBar";
 import Projects from "./components/Projects";
@@ -14,6 +16,7 @@ function App() {
       <Technologies />
       <Projects />
       <Contact />
+      <Footer />
 
       <StaticSidebar />
       <ProgressBar />

@@ -1,14 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import App from './App'
-import './index.css'
-import { LangContextProvider } from './context/LangContext'
+//conponents
+import App from "./App";
+//context
+import { LangContextProvider } from "./context/LangContext";
+//styles
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <LangContextProvider>
       <App />
     </LangContextProvider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

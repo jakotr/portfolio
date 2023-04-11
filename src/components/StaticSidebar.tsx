@@ -18,19 +18,21 @@ const StaticSidebar = () => {
 
   return (
     <motion.div
-      className="fixed left-0 top-0 h-full w-12 text-stone-50 md:flex hidden flex-col justify-between py-5 mix-blend-difference"
+      className="fixed left-0 top-0 h-full w-12 text-lightColor md:flex hidden flex-col justify-between py-5 mix-blend-difference"
       variants={slideIn("left", "", 0.1, 1)}
       initial="hidden"
-      whileInView='show'
+      whileInView="show"
     >
       <div className="flex flex-col items-center gap-8 mix-blend-screen">
-        <span className=""><Logo width={36} height={36} hexColor="#fafaf9" /></span>
-        <div className="flex flex-col gap-[2px] text-sm border border-stone-50">
+        <span className="">
+          <Logo width={36} height={36} hexColor="#fafaf9" />
+        </span>
+        <div className="flex flex-col gap-[2px] text-sm border border-lightColor">
           {languageOptions.map((lang) => (
             <button
               className={`${
                 context.lang === lang.code
-                  ? "bg-stone-50 text-bgDark"
+                  ? "bg-lightColor text-darkColor"
                   : "text-grayText"
               } uppercase px-1`}
               key={lang.code}
@@ -40,7 +42,7 @@ const StaticSidebar = () => {
             </button>
           ))}
         </div>
-        <Socials styleClasses="flex flex-col gap-3 text-xl" color="light" />
+        <Socials styleClasses="flex flex-col gap-3 text-xl" />
       </div>
       <div className="mix-blend-screen">
         <a

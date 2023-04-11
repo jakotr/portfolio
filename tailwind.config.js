@@ -7,13 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#22A39F', 
-        secondary: '#5D3891',
-        orange: '#FF6E31',
-        bgDark: '#18181b', //zinc-900
+        primary: '#6e07f3', //violet
+        secondary: '#2a6df8', //blue
+        darkColor: '#18181b', //zinc-900
         grayText: '#71717a', //zinc-500
-        textColor: '#F3EFE0',
-        test: 'bg-slate-800',
+        lightColor: '#f8fafc', //stone-50
       },
 
     },
@@ -21,9 +19,8 @@ module.exports = {
       padding: {
         DEFAULT: '1rem',
         md:'3rem'
-      }
+      },
     },
   },
   plugins: [],
-  darkMode: 'class',
 }

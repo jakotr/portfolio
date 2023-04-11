@@ -6,27 +6,27 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-import { zoomIn, textVariant } from "../utils/motion";
-import { styles } from "../styles";
+//context
 import { LangContext } from "../context/LangContext";
+//utils
+import { textVariant } from "../utils/motion";
+//styles
+import { styles } from "../styles";
 
 const WorkExperience = () => {
-  const { dictionary } = useContext(LangContext);
+  const {
+    dictionary: { experience },
+  } = useContext(LangContext);
 
   return (
     <>
-      
-      <div
-        className={`${styles.container} bg-white-100 py-12`}
-      >
+      <div className={`${styles.container} bg-white-100 py-12`}>
         <motion.div variants={textVariant()} className="text-center mb-8">
-          <p className={`${styles.subTitle}`}>{dictionary.experience.subTitle}</p>
-          <h2 className={`${styles.headTitle}`}>{dictionary.experience.title}</h2>
+          <p className={`${styles.subTitle}`}>{experience.subTitle}</p>
+          <h2 className={`${styles.headTitle}`}>{experience.title}</h2>
         </motion.div>
-        <VerticalTimeline
-          lineColor= '#71717a'
-        >
-          {dictionary.experience.companies.map((experience, index) => (
+        <VerticalTimeline lineColor="#71717a">
+          {experience.companies.map((experience, index) => (
             <VerticalTimelineElement
               key={experience.title}
               contentStyle={{
@@ -47,7 +47,7 @@ const WorkExperience = () => {
               }
             >
               <div>
-                <h3 className="text-bgDark text-[24px] font-bold">
+                <h3 className="text-darkColor text-[24px] font-bold">
                   {experience.title}
                 </h3>
                 <p
@@ -62,7 +62,7 @@ const WorkExperience = () => {
                 {experience.points.map((point, index) => (
                   <li
                     key={`experience-point-${index}`}
-                    className="text-bgDark text-[14px] pl-1 tracking-wider"
+                    className="text-darkColor text-[14px] pl-1 tracking-wider"
                   >
                     {point}
                   </li>

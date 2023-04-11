@@ -2,12 +2,17 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 
-import { textVariant, fadeIn } from "../utils/motion";
+//context
 import { LangContext } from "../context/LangContext";
+//utils
+import { textVariant, fadeIn } from "../utils/motion";
+//styles
 import { styles } from "../styles";
 
 const Projects = () => {
-  const { dictionary } = useContext(LangContext);
+  const {
+    dictionary: { projects },
+  } = useContext(LangContext);
 
   return (
     <motion.div
@@ -17,12 +22,12 @@ const Projects = () => {
       viewport={{ once: true }}
     >
       <motion.div variants={textVariant()} className="text-center mb-8">
-        <p className={`${styles.subTitle}`}>{dictionary.projects.subTitle}</p>
-        <h2 className={`${styles.headTitle}`}>{dictionary.projects.title}</h2>
+        <p className={`${styles.subTitle}`}>{projects.subTitle}</p>
+        <h2 className={`${styles.headTitle}`}>{projects.title}</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-wrap gap-10">
-        {dictionary.projects.list.map(
+        {projects.list.map(
           ({ name, description, tags, image, git_link, demo_link }, index) => (
             <motion.div
               variants={fadeIn(
@@ -45,11 +50,17 @@ const Projects = () => {
 
               <div className="w-full">
                 <div className="">
-                  <h3 className="text-bgDark font-bold md:text-2xl text-xl">{name}</h3>
-                  <p className="mt-2 text-bgDark text-sm">{description}</p>
+                  <h3 className="text-darkColor font-bold md:text-2xl text-xl">
+                    {name}
+                  </h3>
+                  <p className="mt-2 text-darkColor text-sm">{description}</p>
                 </div>
 
-                <div className={`my-3 gap-5 ${git_link || demo_link ? 'flex' : 'hidden'}`}>
+                <div
+                  className={`my-3 gap-5 ${
+                    git_link || demo_link ? "flex" : "hidden"
+                  }`}
+                >
                   {git_link && (
                     <a
                       href={git_link}
@@ -65,7 +76,7 @@ const Projects = () => {
                       href={demo_link}
                       target="_blank"
                       title="demo"
-                      className="text-md flex justify-center items-center cursor-pointer px-3 border border-bgDark hover:text-primary hover:border-primary"
+                      className="text-md flex justify-center items-center cursor-pointer px-3 border border-darkColor hover:text-primary hover:border-primary"
                     >
                       DEMO
                     </a>
@@ -76,7 +87,7 @@ const Projects = () => {
                   {tags.map((tag) => (
                     <p
                       key={`${name}-${tag.name}`}
-                      className={`text-[14px] ${tag.color} py-1 px-3 bg-secondary text-stone-50`}
+                      className={`text-[14px] ${tag.color} py-1 px-3 bg-secondary text-lightColor`}
                     >
                       #{tag.name}
                     </p>
