@@ -39,6 +39,7 @@ const Projects = () => {
               className={`drop-shadow-2xl md:p-5 md:pb-5 p-0 pb-10 w-full flex flex-col items-center gap-5 border-b ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
+              key={`project-${name}`}
             >
               <div className="relative w-full h-[260px]">
                 <img

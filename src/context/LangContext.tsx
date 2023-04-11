@@ -1,25 +1,41 @@
-import { createContext, useState } from "react";
-import { languageOptions, dictionaryList } from "../languages";
+import { createContext, useState, ReactNode } from "react";
+//types
+import { LangValuesType } from "./types";
+import { LanguageType } from "../types";
+//translations
+import { dictionaryList } from "../languages";
 
-const LangContext = createContext({
-  lang: 'pl',
+//defaults
+const defaultProvider: LangValuesType = {
+  lang: "pl",
   dictionary: dictionaryList.pl,
-})
+  changeLang: (value: string) => null,
+};
 
-const LangContextProvider = ({children}) => {
+const LangContext = createContext(defaultProvider);
 
-  const [lang, setLang] = useState('pl')
+type LangProps = {
+  children: ReactNode;
+};
 
-  const handleChangeLang = (value : string) => {
-    setLang(value)
-  }
+const LangContextProvider = ({ children }: LangProps) => {
+  const [lang, setLang] = useState(() => {
+    const lang = localStorage.getItem("language");
+    return lang !== null ? lang : "pl";
+  });
 
-  return (
-    <LangContext.Provider value= {{lang, dictionary: dictionaryList[lang], changeLang: handleChangeLang}}>
-      {children}
-    </LangContext.Provider>
-  )
-}
+  const handleChangeLang = (value: string) => {
+    setLang(value);
+    localStorage.setItem("language", value);
+  };
 
+  const values = {
+    lang,
+    dictionary: dictionaryList[lang as keyof LanguageType],
+    changeLang: handleChangeLang,
+  };
 
-export {LangContextProvider, LangContext}
+  return <LangContext.Provider value={values}>{children}</LangContext.Provider>;
+};
+
+export { LangContextProvider, LangContext };

@@ -17,7 +17,9 @@ import {
   carrent,
 } from "../assets";
 
-export default {
+import { TranslationType } from "../types";
+
+export default <TranslationType>{
   intro: {
     name: "Jakub Otręba",
     position: "Front-End Developer",
@@ -153,4 +155,4 @@ export default {
     title: "Kontakt.",
     subTitle: "Oddezwij się",
   },
-};
+} ;
