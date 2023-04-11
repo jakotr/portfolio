@@ -3,12 +3,13 @@ type logoProps = {
   width: number | string;
   height: number | string;
   hexColor: string;
+  className: string;
 };
 
-const Logo = ({ width, height, hexColor }: logoProps) => {
+const Logo = ({ width, height, hexColor, className }: logoProps) => {
   return (
     <>
-      <svg width={width} height={height} viewBox="0 0 196.875 196.875">
+      <svg width={width} height={height} className={className} viewBox="0 0 196.875 196.875">
         <defs id="SvgjsDefs1780"></defs>
         <g
           id="SvgjsG1781"

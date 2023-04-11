@@ -25,6 +25,7 @@ const Introduction = () => {
     const pathNode = pathRef.current;
     const containerNode = containerRef.current;
     let length = 0;
+    let draw = 0;
 
     if (pathNode instanceof SVGPathElement) {
       length = pathNode?.getTotalLength();
@@ -42,7 +43,7 @@ const Introduction = () => {
           (document.body.scrollTop + document.documentElement.scrollTop) /
           // (document.documentElement.scrollHeight -
           (containerNode.scrollHeight - document.documentElement.clientHeight);
-        const draw = length * scrollpercent;
+        draw = length * scrollpercent;
       }
 
       if (svgNode !== null) {
