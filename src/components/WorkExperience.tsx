@@ -17,20 +17,16 @@ const WorkExperience = () => {
     <>
       
       <div
-        className={`${styles.container} h-screen bg-white-100 py-12`}
-        // variants={zoomIn(0.5, 1)}
-        // initial="hidden"
-        // whileInView="show"
-        // viewport={{ once: true }}
+        className={`${styles.container} bg-white-100 py-12`}
       >
         <motion.div variants={textVariant()} className="text-center mb-8">
-          <p className={`${styles.subTitle}`}>What have I done so far</p>
-          <h2 className={`${styles.headTitle}`}>Work Experience</h2>
+          <p className={`${styles.subTitle}`}>{dictionary.experience.subTitle}</p>
+          <h2 className={`${styles.headTitle}`}>{dictionary.experience.title}</h2>
         </motion.div>
         <VerticalTimeline
           lineColor= '#71717a'
         >
-          {dictionary.experience.map((experience, index) => (
+          {dictionary.experience.companies.map((experience, index) => (
             <VerticalTimelineElement
               key={experience.title}
               contentStyle={{

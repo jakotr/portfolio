@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { languageOptions, dictionaryList } from "../components/languages";
+import { languageOptions, dictionaryList } from "../languages";
 
 const LangContext = createContext({
   lang: 'pl',
