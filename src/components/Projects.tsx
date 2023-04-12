@@ -88,7 +88,7 @@ const Projects = () => {
                   {tags.map((tag) => (
                     <p
                       key={`${name}-${tag.name}`}
-                      className={`text-[14px] ${tag.color} py-1 px-3 bg-secondary text-lightColor`}
+                      className={`text-[14px] py-1 px-3 bg-secondary text-lightColor`}
                     >
                       #{tag.name}
                     </p>

@@ -33,7 +33,6 @@ export type TranslationType = {
       description: string;
       tags: {
         name: string;
-        color: string;
       }[];
       image: string;
       git_link: string;
