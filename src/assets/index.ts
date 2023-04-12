@@ -18,7 +18,9 @@ import sass from "./tech/sass.png";
 
 
 //projects
-import carrent from './carrent.png'
+import paint from './projects/paint-app.png'
+import recipe from './projects/recipe-app.png'
+import sheep from './projects/sheep-app.png'
 
 export {
   logoFree,
@@ -36,5 +38,7 @@ export {
   next,
   bootstrap,
   sass,
-  carrent,
+  paint,
+  recipe,
+  sheep,
 };

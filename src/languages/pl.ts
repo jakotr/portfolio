@@ -14,7 +14,9 @@ import {
   next,
   bootstrap,
   sass,
-  carrent,
+  paint,
+  recipe,
+  sheep,
 } from "../assets";
 
 import { TranslationType } from "../types";
@@ -129,25 +131,61 @@ export default <TranslationType>{
     subTitle: "Co zrobiłem",
     list: [
       {
-        name: "Car Rent",
+        name: "Sheep Jump",
         description:
-          "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+          "Jest to gra internetowa zbudowana przy użyciu JavaScript, HTML i CSS. Gra jest zainspirowana popularną grą mobilną Flappy Bird, ale z rolniczym twistem. Gracz kontroluje owcę lecącą przez farmę, unikając przeszkód. Gra została zaprojektowana jako prosta, ale wymagająca, z rosnącym poziomem trudności w miarę postępów gracza.",
         tags: [
           {
-            name: "react",
-            color: "blue-text-gradient",
+            name: "JavaScript",
           },
           {
-            name: "mongodb",
-            color: "green-text-gradient",
+            name: "HTML",
           },
           {
-            name: "tailwind",
-            color: "pink-text-gradient",
+            name: "CSS",
           },
         ],
-        image: carrent,
-        git_link: "https://github.com/",
+        image: sheep,
+        git_link: "https://github.com/jakotr/sheep-jump",
+        demo_link: "https://jakotr.github.io/sheep-jump/",
+      },
+      {
+        name: "Paint App",
+        description:
+          "Jest to internetowa aplikacja do rysowania zbudowana przy użyciu JavaScript, HTML i CSS. Aplikacja jest inspirowana klasycznym programem Windows Paint, ale z wykorzystaniem nowoczesnych technologii internetowych. Użytkownik może wybrać różne narzędzia do rysowania. Aplikacja pozwala również użytkownikowi wybrać różne kolory i rozmiary dla swoich narzędzi.. Aplikacja została zaprojektowana jako intuicyjna i łatwa w użyciu, z przyjaznym interfejsem, który pozwala użytkownikom tworzyć i zapisywać swoje rysunki. Użytkownicy mogą również udostępniać swoje rysunki innym osobom, eksportując je jako pliki graficzne.",
+        tags: [
+          {
+            name: "JavaScript",
+          },
+          {
+            name: "HTML",
+          },
+          {
+            name: "CSS",
+          },
+        ],
+        image: paint,
+        git_link: "https://github.com/jakotr/paint-app",
+        demo_link: "https://jakotr.github.io/paint-app/",
+      },
+      {
+        name: "Recipe App",
+        description:
+          "Jest to aplikacja internetowa zbudowana przy użyciu React, React Router i SASS. Aplikacja jest przeznaczona dla użytkowników do wyszukiwania przepisów na podstawie słów kluczowych i składników. Użytkownik może wprowadzić swoje zapytanie, a aplikacja zwróci listę odpowiednich przepisów, wraz z ich składnikami, czasem gotowania i wielkością porcji.",
+        tags: [
+          {
+            name: "React",
+          },
+          {
+            name: "JavaScript",
+          },
+          {
+            name: "Sass",
+          },
+        ],
+        image: recipe,
+        git_link: "https://github.com/jakotr/recipe-app",
+        demo_link: "https://jakotr.github.io/recipe-app/",
       },
     ],
   },
