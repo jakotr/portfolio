@@ -17,6 +17,7 @@ import {
   paint,
   recipe,
   sheep,
+  minecraft,
 } from "../assets";
 
 import { TranslationType } from "../types";
@@ -131,6 +132,25 @@ export default <TranslationType> {
     subTitle: "What have I done so far",
     list: [
       {
+        name: "Minecraft Clone",
+        description:
+          "This is an application built using React library and ThreeJS. The main goal of the project is to learn ThreeJS library and its capabilities. The app is a simple Minecraft-like demo, where users can move around and build basic blocks. The application is currently under development and more features will be added in the future.",
+        tags: [
+          {
+            name: "React",
+          },
+          {
+            name: "Typescript",
+          },
+          {
+            name: "ThreeJS",
+          },
+        ],
+        image: minecraft,
+        git_link: "https://github.com/jakotr/minecraft-demo",
+        demo_link: "https://jakotr.github.io/minecraft-demo/",
+      },
+      {
         name: "Sheep Jump",
         description:
           "This is a web game built using JavaScript, HTML and CSS. The game is inspired by the popular mobile game Flappy Bird, but with a farming twist. The player controls a sheep flying through a farm, avoiding obstacles. The game is designed to be simple but challenging, with increasing difficulty as the player progresses.",
@@ -186,25 +206,6 @@ export default <TranslationType> {
         image: recipe,
         git_link: "https://github.com/jakotr/recipe-app",
         demo_link: "https://jakotr.github.io/recipe-app/",
-      },
-      {
-        name: "Minecraft Clone",
-        description:
-          "This is an application built using React library and ThreeJS. The main goal of the project is to learn ThreeJS library and its capabilities. The app is a simple Minecraft-like demo, where users can move around and build basic blocks. The application is currently under development and more features will be added in the future.",
-        tags: [
-          {
-            name: "React",
-          },
-          {
-            name: "Typescript",
-          },
-          {
-            name: "ThreeJS",
-          },
-        ],
-        image: recipe,
-        git_link: "https://github.com/jakotr/minecraft-demo",
-        demo_link: "https://jakotr.github.io/minecraft-demo/",
       },
     ],
   },

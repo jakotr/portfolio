@@ -17,6 +17,7 @@ import {
   paint,
   recipe,
   sheep,
+  minecraft,
 } from "../assets";
 
 import { TranslationType } from "../types";
@@ -131,6 +132,25 @@ export default <TranslationType>{
     subTitle: "Co zrobiłem",
     list: [
       {
+        name: "Minecraft Clone",
+        description:
+          "Aplikacja imitująca grę 'Minecraft', zbudowana przy użyciu biblioteki React oraz ThreeJS. Głównym celem projektu jest poznanie biblioteki ThreeJS i jej możliwości. Aplikacja jest prostym demo podobnym do Minecrafta, gdzie użytkownicy mogą się poruszać i budować podstawowe bloki. Aplikacja jest obecnie w trakcie rozwoju i w przyszłości zostanie dodanych więcej funkcji.",
+        tags: [
+          {
+            name: "React",
+          },
+          {
+            name: "Typescript",
+          },
+          {
+            name: "ThreeJS",
+          },
+        ],
+        image: minecraft,
+        git_link: "https://github.com/jakotr/minecraft-demo",
+        demo_link: "https://jakotr.github.io/minecraft-demo/",
+      },
+      {
         name: "Sheep Jump",
         description:
           "Jest to gra internetowa zbudowana przy użyciu JavaScript, HTML i CSS. Gra jest zainspirowana popularną grą mobilną Flappy Bird, ale z rolniczym twistem. Gracz kontroluje owcę lecącą przez farmę, unikając przeszkód. Gra została zaprojektowana jako prosta, ale wymagająca, z rosnącym poziomem trudności w miarę postępów gracza.",
@@ -186,25 +206,6 @@ export default <TranslationType>{
         image: recipe,
         git_link: "https://github.com/jakotr/recipe-app",
         demo_link: "https://jakotr.github.io/recipe-app/",
-      },
-      {
-        name: "Minecraft Clone",
-        description:
-          "Aplikacja imitująca grę 'Minecraft', zbudowana przy użyciu biblioteki React oraz ThreeJS. Głównym celem projektu jest poznanie biblioteki ThreeJS i jej możliwości. Aplikacja jest prostym demo podobnym do Minecrafta, gdzie użytkownicy mogą się poruszać i budować podstawowe bloki. Aplikacja jest obecnie w trakcie rozwoju i w przyszłości zostanie dodanych więcej funkcji.",
-        tags: [
-          {
-            name: "React",
-          },
-          {
-            name: "Typescript",
-          },
-          {
-            name: "ThreeJS",
-          },
-        ],
-        image: recipe,
-        git_link: "https://github.com/jakotr/minecraft-demo",
-        demo_link: "https://jakotr.github.io/minecraft-demo/",
       },
     ],
   },
