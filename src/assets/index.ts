@@ -21,6 +21,7 @@ import sass from "./tech/sass.png";
 import paint from './projects/paint-app.png'
 import recipe from './projects/recipe-app.png'
 import sheep from './projects/sheep-app.png'
+import minecraft from './projects/minecraft-app.png'
 
 export {
   logoFree,
@@ -41,4 +42,5 @@ export {
   paint,
   recipe,
   sheep,
+  minecraft,
 };

@@ -187,6 +187,25 @@ export default <TranslationType> {
         git_link: "https://github.com/jakotr/recipe-app",
         demo_link: "https://jakotr.github.io/recipe-app/",
       },
+      {
+        name: "Minecraft Clone",
+        description:
+          "This is an application built using React library and ThreeJS. The main goal of the project is to learn ThreeJS library and its capabilities. The app is a simple Minecraft-like demo, where users can move around and build basic blocks. The application is currently under development and more features will be added in the future.",
+        tags: [
+          {
+            name: "React",
+          },
+          {
+            name: "Typescript",
+          },
+          {
+            name: "ThreeJS",
+          },
+        ],
+        image: recipe,
+        git_link: "https://github.com/jakotr/minecraft-demo",
+        demo_link: "https://jakotr.github.io/minecraft-demo/",
+      },
     ],
   },
   contact: {
