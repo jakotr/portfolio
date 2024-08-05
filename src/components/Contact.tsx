@@ -2,17 +2,16 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 
 //components
-import Socials from "./Socials";
+import { Socials } from ".";
 //context
-import { LangContext } from "../context/LangContext";
+import { LangContext } from "../context";
 //utils
-import { textVariant, fadeIn } from "../utils/motion";
+import { textVariant, fadeIn } from "../utils";
 import { email } from "../constants";
 //styles
 import { styles } from "../styles";
 
-const Contact = () => {
-  //context
+export const Contact = () => {
   const {
     dictionary: { contact },
   } = useContext(LangContext);
@@ -40,13 +39,9 @@ const Contact = () => {
         </motion.div>
 
         <motion.div variants={fadeIn("up", "spring", 0.5, 1)}>
-          <Socials
-            styleClasses="flex justify-center gap-5 text-3xl"
-          />
+          <Socials styleClasses="flex justify-center gap-5 text-3xl" />
         </motion.div>
       </motion.div>
     </div>
   );
 };
-
-export default Contact;

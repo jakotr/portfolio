@@ -7,13 +7,13 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 //context
-import { LangContext } from "../context/LangContext";
+import { LangContext } from "../context";
 //utils
-import { textVariant } from "../utils/motion";
+import { textVariant } from "../utils";
 //styles
 import { styles } from "../styles";
 
-const WorkExperience = () => {
+export const WorkExperience = () => {
   const {
     dictionary: { experience },
   } = useContext(LangContext);
@@ -75,5 +75,3 @@ const WorkExperience = () => {
     </>
   );
 };
-
-export default WorkExperience;

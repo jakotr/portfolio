@@ -2,24 +2,24 @@ import { useEffect, useRef, useContext } from "react";
 import { motion } from "framer-motion";
 
 //context
-import { LangContext } from "../context/LangContext";
+import { LangContext } from "../context";
 //utils
-import { fadeIn, textVariant, zoomIn } from "../utils/motion";
+import { fadeIn, textVariant, zoomIn } from "../utils";
 //styles
 import { styles } from "../styles";
 
-const Introduction = () => {
-  //context
+export const Introduction = () => {
+
   const {
     dictionary: { intro, about },
   } = useContext(LangContext);
 
-  //refs
+
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const containerRef = useRef<HTMLElement>(null);
 
-  //effects
+
   useEffect(() => {
     const svgNode = svgRef.current;
     const pathNode = pathRef.current;
@@ -41,7 +41,6 @@ const Introduction = () => {
       if (containerNode !== null) {
         const scrollpercent =
           (document.body.scrollTop + document.documentElement.scrollTop) /
-          // (document.documentElement.scrollHeight -
           (containerNode.scrollHeight - document.documentElement.clientHeight);
         draw = length * scrollpercent;
       }
@@ -53,6 +52,7 @@ const Introduction = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -103,7 +103,6 @@ const Introduction = () => {
               <g
                 transform="matrix(1,0,0,1,624.25,300.5)"
                 opacity="1"
-                // style="display: block;"
               >
                 <g opacity="1" transform="matrix(1,0,0,1,-2,0)">
                   <path
@@ -122,7 +121,6 @@ const Introduction = () => {
               <g
                 transform="matrix(1,0,0,1,600,1100)"
                 opacity="1"
-                // style="display: block;"
               ></g>
             </g>
           </svg>
@@ -141,4 +139,3 @@ const Introduction = () => {
   );
 };
 
-export default Introduction;

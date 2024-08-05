@@ -18,22 +18,17 @@ import {
   recipe,
   sheep,
   minecraft,
+  logoIG,
 } from "../assets";
 
 import { TranslationType } from "../types";
 
-export default <TranslationType> {
+export default <TranslationType>{
   intro: {
     name: "Jakub Otręba",
     position: "Front-End Developer",
   },
-  about: `Frontend Developer at Image Design in Opole - I have
-  commercial experience in JavaScript, Jquery
-  technology. I also develop in libraries: React,
-  Typescript, Vue and NextJS - while developing
-  websites and intenet stores. In addition, I graduated
-  from the Opole University of Technology with an
-  engineering degree in Computer Science.
+  about: `Associate Developer at IG Group in Krakow - I have commercial experience in React, TypeScript technology and in writing tests using JEST. I also develop in libraries: ThreeJS and Vue. In addition, I graduated from the Opole University of Technology with an engineering degree in Computer Science.
   `,
   experience: {
     title: "Work Experience.",
@@ -57,14 +52,30 @@ export default <TranslationType> {
         company_name: "Image Design",
         icon: logoID,
         iconBg: "#E6DEDD",
-        date: "Nov 2020 - Present",
+        date: "Nov 2020 - Mai 2023",
         points: [
           "Coding graphic templates for online stores",
           "Support of the Atomstore ecommerce platform",
           "Taking care of SEO based on Core Web Vitals",
           "Writing dedicated scripts for clients needs",
           "Collaborate with the team in project planning",
-          "Technologies used: HTML, LESS, CSS, JAVASCRIPT, JQUERY, CAKEPHP"
+          "Technologies used: HTML, LESS, CSS, JAVASCRIPT, JQUERY, CAKEPHP",
+        ],
+      },
+      {
+        title: "Associate Developer",
+        company_name: "IG Group",
+        icon: logoIG,
+        iconBg: "#002a54",
+        date: "Lip 2023 - Present",
+        points: [
+          "Creating reusable components using modern JavaScript tools under the needs of the company",
+          "Writing automated and unit tests to validate application functionality, identifying and resolving potential issues",
+          "Migrating applications from EmberJS to React using microforntend and refactoring older Components to the newest standards",
+          "Configuring applications and deploy updates efficiently and securely",
+          "Documenting code using Bitbucket and Gitlab",
+          "Working in an international environment in Agile methodology to clarify requirements, and prioritize tasks",
+          "Technologies used: REACT, TYPESCRIPT, JEST, STYLED_COMPONENTS, EMBERJS, SASS",
         ],
       },
     ],
@@ -210,7 +221,7 @@ export default <TranslationType> {
     ],
   },
   contact: {
-    title: 'Contact.',
-    subTitle: 'Leave a message',
-  }
+    title: "Contact.",
+    subTitle: "Leave a message",
+  },
 };

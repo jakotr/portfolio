@@ -1,15 +1,15 @@
-import pl from './pl'
-import en from './en'
+import pl from "./pl";
+import en from "./en";
 
-export const dictionaryList = {pl, en}
+export const dictionaryList = { pl, en };
 
 export const languageOptions = [
   {
-    code: 'pl',
-    name: 'Polski'
+    code: "pl",
+    name: "Polski",
   },
   {
-    code: 'en',
-    name: 'English',
-  }
-]
+    code: "en",
+    name: "English",
+  },
+];

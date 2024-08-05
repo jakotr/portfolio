@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 //conponents
-import App from "./App";
+import { App } from "./App";
 //context
 import { LangContextProvider } from "./context/LangContext";
 //styles

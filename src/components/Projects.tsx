@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 
 //context
-import { LangContext } from "../context/LangContext";
+import { LangContext } from "../context";
 //utils
-import { textVariant, fadeIn } from "../utils/motion";
+import { textVariant, fadeIn } from "../utils";
 //styles
 import { styles } from "../styles";
 
-const Projects = () => {
+export const Projects = () => {
   const {
     dictionary: { projects },
   } = useContext(LangContext);
@@ -103,4 +103,3 @@ const Projects = () => {
   );
 };
 
-export default Projects;

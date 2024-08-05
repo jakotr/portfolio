@@ -18,6 +18,7 @@ import {
   recipe,
   sheep,
   minecraft,
+  logoIG,
 } from "../assets";
 
 import { TranslationType } from "../types";
@@ -27,13 +28,7 @@ export default <TranslationType>{
     name: "Jakub Otręba",
     position: "Front-End Developer",
   },
-  about: `Frontend Developer w firmie Image Design w Opolu -
-  posiadam doświadczenie komercyjne w technologii
-  JavaScript, Jquery. Rozwijam się również w bibliotkach:
-  React,, Typescript, Vue oraz NextJS - podczas
-  tworzenia stron oraz sklepów intenetowych. Ponadto,
-  ukończyłem studia inżynierskie na kierunku Informatyka
-  na Politechnice Opolskiej.`,
+  about: `Associate Developer w firmie IG Group w Krakowie - posiadam doświadczenie komercyjne w technologii React, TypeScript oraz w pisaniu testów przy użyciu JEST. Rozwijam się również w bibliotkach: ThreeJS i Vue. Ponadto, ukończyłem studia inżynierskie na kierunku Informatyka na Politechnice Opolskiej.`,
   experience: {
     title: "Doświadczenie zawodowe.",
     subTitle: "Gdzie pracowałem dotychczas",
@@ -56,7 +51,7 @@ export default <TranslationType>{
         company_name: "Image Design",
         icon: logoID,
         iconBg: "#E6DEDD",
-        date: "Lis 2020 - Obecnie",
+        date: "Lis 2020 - Maj 2023",
         points: [
           "Kodowanie szablonów graficznych sklepów Internetowych",
           "Tworzenie stron typu landing page i one page",
@@ -64,7 +59,23 @@ export default <TranslationType>{
           "Dbanie o pozycjonowanie stron w oparciu o Core Web Vitals",
           "Pisanie dedykowanych skryptów pod potrzeby klientów",
           "Współpraca z zespołem przy planowaniu projektów",
-          "Wykorzystane technologie: HTML, LESS, CSS, JAVASCRIPT, JQUERY, CAKEPHP",
+          "Wykorzystane technologie: REACT, JAVASCRIPT, HTML, LESS, CSS, JQUERY, CAKEPHP",
+        ],
+      },
+      {
+        title: "Associate Developer",
+        company_name: "IG Group",
+        icon: logoIG,
+        iconBg: "#002a54",
+        date: "Lip 2023 - Obecnie",
+        points: [
+          "Tworzenie re-używalnych komponentów przy użyciu nowoczesnych narzędzi JavaScript pod potrzeby firmy",
+          "Pisanie testów automatycznych i jednostkowych w celu walidacji funkcjonalności aplikacji, identyfikowanie i rozwiązywanie potencjalnych problemów",
+          "Migracja aplikacji z EmberJS do React przy użyciu microfrontend i refaktoryzacja starszych komponentów do najnowszych standardów",
+          "Konfigurowanie aplikacji i wdrażanie aktualizacji w sposób wydajny i bezpieczny",
+          "Dokumentowanie kodu przy użyciu Bitbucket i Gitlab",
+          "Praca w międzynarodowym środowisku w metodologii Agile w celu ustalenia wymagań i priorytetów zadań",
+          "Wykorzystane technologie: REACT, TYPESCRIPT, JEST, STYLED_COMPONENTS, EMBERJS, SASS",
         ],
       },
     ],
@@ -213,4 +224,4 @@ export default <TranslationType>{
     title: "Kontakt.",
     subTitle: "Oddezwij się",
   },
-} ;
+};

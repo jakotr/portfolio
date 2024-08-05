@@ -2,13 +2,13 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 
 //context
-import { LangContext } from "../context/LangContext";
+import { LangContext } from "../context";
 //utils
-import { textVariant, fadeIn } from "../utils/motion";
+import { textVariant, fadeIn } from "../utils";
 //styles
 import { styles } from "../styles";
 
-const Technologies = () => {
+export const Technologies = () => {
   const {
     dictionary: { tech },
   } = useContext(LangContext);
@@ -42,4 +42,3 @@ const Technologies = () => {
   );
 };
 
-export default Technologies;
