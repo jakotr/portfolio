@@ -2,18 +2,17 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 
 //components
-import Socials from "./Socials";
+import { Socials, Logo } from ".";
 
 //utils
-import { slideIn } from "../utils/motion";
+import { slideIn } from "../utils";
 
 //languages, constants
-import { LangContext } from "../context/LangContext";
+import { LangContext } from "../context";
 import { languageOptions } from "../languages";
 import { email } from "../constants";
-import Logo from "./Logo";
 
-const StaticSidebar = () => {
+export const StaticSidebar = () => {
   const context = useContext(LangContext);
 
   return (
@@ -59,5 +58,3 @@ const StaticSidebar = () => {
     </motion.div>
   );
 };
-
-export default StaticSidebar;

@@ -1,14 +1,15 @@
-//components
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Introduction from "./components/Introduction";
-import ProgressBar from "./components/ProgressBar";
-import Projects from "./components/Projects";
-import StaticSidebar from "./components/StaticSidebar";
-import Technologies from "./components/Technologies";
-import WorkExperience from "./components/WorkExperience";
+import {
+  Contact,
+  Footer,
+  Introduction,
+  ProgressBar,
+  Projects,
+  StaticSidebar,
+  Technologies,
+  WorkExperience,
+} from "./components";
 
-function App() {
+export const App = () => {
   return (
     <div className="app relative">
       <Introduction />
@@ -17,11 +18,9 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
-
       <StaticSidebar />
       <ProgressBar />
     </div>
   );
-}
+};
 
-export default App;

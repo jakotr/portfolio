@@ -1,11 +1,10 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-// TS props type
 type SocialsProps = {
   styleClasses: string;
 };
 
-const Socials = ({ styleClasses }: SocialsProps) => {
+export const Socials = ({ styleClasses }: SocialsProps) => {
   return (
     <div className={`${styleClasses}`}>
       <a
@@ -27,5 +26,3 @@ const Socials = ({ styleClasses }: SocialsProps) => {
     </div>
   );
 };
-
-export default Socials;

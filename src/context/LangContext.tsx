@@ -1,6 +1,6 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState } from "react";
 //types
-import { LangValuesType } from "./types";
+import { LangProps, LangValuesType } from "./types";
 import { LanguageType } from "../types";
 //translations
 import { dictionaryList } from "../languages";
@@ -12,13 +12,9 @@ const defaultProvider: LangValuesType = {
   changeLang: (value: string) => null,
 };
 
-const LangContext = createContext(defaultProvider);
+export const LangContext = createContext(defaultProvider);
 
-type LangProps = {
-  children: ReactNode;
-};
-
-const LangContextProvider = ({ children }: LangProps) => {
+export const LangContextProvider = ({ children }: LangProps) => {
   const [lang, setLang] = useState(() => {
     const lang = localStorage.getItem("language");
     return lang !== null ? lang : "pl";
@@ -37,5 +33,3 @@ const LangContextProvider = ({ children }: LangProps) => {
 
   return <LangContext.Provider value={values}>{children}</LangContext.Provider>;
 };
-
-export { LangContextProvider, LangContext };
